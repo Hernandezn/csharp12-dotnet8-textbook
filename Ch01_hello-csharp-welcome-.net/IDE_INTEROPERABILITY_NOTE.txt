@@ -1,0 +1,8 @@
+From Page 67:
+
+When using Visual Studio Code, or more accurately, the dotnet
+CLI, to run a console app, it executes the app from the
+<projectname> folder. When using Visual Studio 2022 for
+Windows, it executes the app from the
+<projectname>\bin\Debug\net8.0 folder.
+
