@@ -1,4 +1,7 @@
 <Solution>
+  <Project Path="Arguments/Arguments.csproj" />
+  <Project Path="AsyncConsole/AsyncConsole.csproj" />
+  <Project Path="Ch02Ex03Numbers/Ch02Ex03Numbers.csproj" />
   <Project Path="Formatting/Formatting.csproj" />
   <Project Path="Numbers/Numbers.csproj" />
   <Project Path="Variables/Variables.csproj" />
