@@ -8,3 +8,4 @@ For further reference, C# and .NET also have official Microsoft documentation th
 - [C# Language Features Reference](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/)
 - [.NET Documentation](https://learn.microsoft.com/en-us/dotnet/)
 - [.NET API Browser / Base Namespace Library](https://learn.microsoft.com/en-us/dotnet/api/)
+- [Official C# Coding Style Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
