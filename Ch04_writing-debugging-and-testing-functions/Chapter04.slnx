@@ -3,6 +3,9 @@
   <Project Path="CalculatorLibUnitTests/CalculatorLibUnitTests.csproj" />
   <Project Path="CallStackExceptionHandling/CallStackExceptionHandling.csproj" />
   <Project Path="CallStackExceptionHandlingLib/CallStackExceptionHandlingLib.csproj" />
+  <Project Path="Ch04Ex02PrimeFactorsApp/Ch04Ex02PrimeFactorsApp.csproj" />
+  <Project Path="Ch04Ex02PrimeFactorsLib/Ch04Ex02PrimeFactorsLib.csproj" />
+  <Project Path="Ch04Ex02PrimeFactorsTests/Ch04Ex02PrimeFactorsTests.csproj" />
   <Project Path="Debugging/Debugging.csproj" />
   <Project Path="HotReloading/HotReloading.csproj" />
   <Project Path="Instrumenting/Instrumenting.csproj" />
