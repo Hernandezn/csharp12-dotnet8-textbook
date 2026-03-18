@@ -338,3 +338,9 @@ Headset holo = new();
 WriteLine($"{holo.ProductName} is made by {holo.Manufacturer}");
 Headset mq = new() { Manufacturer = "Meta", ProductName = "Quest 3" };
 WriteLine($"{mq.ProductName} is made by {mq.Manufacturer}");
+
+
+
+// For Exercise 5.2
+Car fiat = new() { Wheels = 4, IsEV = true };
+fiat.Start();
