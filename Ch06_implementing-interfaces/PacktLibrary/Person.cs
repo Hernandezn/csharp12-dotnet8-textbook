@@ -187,4 +187,25 @@ public class Person : IComparable<Person?>
 
         return position;
     }
+
+
+
+    public override string ToString()
+    {
+        return $"{Name} is a {base.ToString()}.";
+    }
+
+
+
+    public void TimeTravel(DateTime when)
+    {
+        if (when <= Born)
+        {
+            throw new PersonException("Cannot travel to before birth!");
+        }
+        else
+        {
+            WriteLine($"Welcome to {when: yyyy}!");
+        }
+    }
 }

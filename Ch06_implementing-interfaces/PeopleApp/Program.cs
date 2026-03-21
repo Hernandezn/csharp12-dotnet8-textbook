@@ -167,4 +167,103 @@ WriteLine($"({dv4.X}, {dv4.Y})");
 
 DisplacementVector dv5 = new(3, 5);
 WriteLine($"dv1.Equals(dv5): {dv1.Equals(dv5)}");
-WriteLine($"dv1 == dv5: {dv1 == dv5}"); // only works here because DisplacementVector is defined as a record struct
+WriteLine($"dv1 == dv5: {dv1 == dv5}\n"); // only works here because DisplacementVector is defined as a record struct
+
+
+
+Employee john = new()
+{
+    Name = "John Jones",
+    Born = new(year: 1990, month: 7, day: 28, hour: 0, minute: 0, second: 0, offset: TimeSpan.Zero)
+};
+john.WriteToConsole();
+
+john.EmployeeCode = "JJ001";
+john.HireDate = new(year: 2014, month: 11, day: 23);
+WriteLine($"{john.Name} was hired on {john.HireDate}.");
+WriteLine(john.ToString());
+WriteLine();
+
+
+
+Employee aliceEmployee = new()
+{
+    Name = "Alice",
+    EmployeeCode = "AA123"
+};
+Person alicePerson = aliceEmployee;
+
+aliceEmployee.WriteToConsole();
+alicePerson.WriteToConsole();
+WriteLine(aliceEmployee.ToString());
+WriteLine(alicePerson.ToString());
+WriteLine();
+
+
+
+if (alicePerson is Employee explicitAlice) // checks the type AND cast-assigns it to explicitAlice
+{
+    WriteLine($"{nameof(alicePerson)} is an Employee.");
+    // Employee explicitAlice = (Employee)alicePerson;
+    // ...
+
+}
+else if (alicePerson is not Employee)
+{
+    // ...
+}
+
+
+
+// nullish casting using "as," assigning to null if the type cannot be cast
+Employee? aliceAsEmployee = alicePerson as Employee;
+if (aliceAsEmployee is not null)
+{
+    WriteLine($"{nameof(alicePerson)} as an Employee");
+    // ...
+}
+
+
+
+try
+{
+    john.TimeTravel(when: new(1999, 12, 31));
+    john.TimeTravel(when: new(1950, 12, 25));
+}
+catch (PersonException ex)
+{
+    WriteLine(ex.Message);
+}
+WriteLine();
+
+
+
+string email1 = "pamela1@test.com";
+string email2 = "ian&test.com";
+// WriteLine("{0} is a valid e-mail address: {1}", email1, StringExtensions.IsValidEmail(email1));
+// WriteLine("{0} is a valid e-mail address: {1}", email2, StringExtensions.IsValidEmail(email2));
+WriteLine("{0} is a valid e-mail address: {1}", email1, email1.IsValidEmail()); // uses the extension method in StringExtensions.cs
+WriteLine("{0} is a valid e-mail address: {1}", email2, email2.IsValidEmail());
+WriteLine();
+
+
+
+// mutable record class
+C1 c1 = new() { Name = "Bob" };
+c1.Name = "Bill";
+
+// immutable record class; compiler erroron Name change
+// C2 c2 = new() { Name = "Bob" };
+// c2.Name = "Bill";
+
+// mutable record struct
+S1 s1 = new() { Name = "Bob" };
+s1.Name = "Bill";
+
+// mutable record struct
+S2 s2 = new() { Name = "Bob" };
+s2.Name = "Bill";
+
+// immutable record struct; compiler error on Name change
+// S3 s3 = new() { Name = "Bob" };
+// s3.Name = "Bill";
